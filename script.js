@@ -1,8 +1,3 @@
-const searchButton = document.querySelector('#search')
-
-
-
-
 const url = 'https://indonesian-identification-card-ktp.p.rapidapi.com/api/v3/check?nik=5171041903640005';
 const options = {
 	method: 'GET',
@@ -12,6 +7,8 @@ const options = {
 	}
 };
 
+
+async function checkNIK(){
 try {
 	const response = await fetch(url, options);
 	const result = await response.text();
@@ -19,3 +16,7 @@ try {
 } catch (error) {
 	console.error(error);
 }
+
+};
+
+checkNIK();
